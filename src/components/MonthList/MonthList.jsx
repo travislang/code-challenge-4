@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import MonthItem from '../MonthItem/MonthItem';
 
 class MonthList extends Component {
 
     render() {
-        console.log('monthlist', this.props.months);
-        
         let months = this.props.months.map( month => {
             return (
-                <li 
-                key={month.id}
-                onClick={this.props.handleClick}
-                >{month.name}</li>
+                <MonthItem 
+                    key={month.id}
+                    month={month}
+                    handleClick={this.props.handleClick}
+                />
             )
                 
         })
