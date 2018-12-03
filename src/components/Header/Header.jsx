@@ -5,7 +5,7 @@ class Header extends Component {
         return (
             <header className="App-header">
                 <h1 className="App-title">Select a Month</h1>
-                <h3>{this.props.currentMonth}</h3>
+                <h2>{this.props.currentMonth}</h2>
                 <br />
             </header>
         )

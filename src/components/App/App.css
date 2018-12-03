@@ -5,7 +5,7 @@
 .App-header {
   background-color: #222;
   min-height: 120px;
-  padding: 20px;
+  padding: 10px;
   color: white;
 }
 
@@ -15,6 +15,10 @@
 
 .App-intro {
   font-size: large;
+}
+
+h3 {
+
 }
 
 @keyframes App-logo-spin {
