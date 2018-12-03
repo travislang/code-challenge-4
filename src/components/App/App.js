@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MonthList from '../MonthList/MonthList';
 import './App.css';
 
 class App extends Component {
     state = {
-        months: []
+        monthList: []
     }
     
     getMonths = () => {
         axios.get('/calendar')
         .then( res => {
             this.setState({
-                months: res.data
+                monthList: res.data
             })
         }).catch( err => {
             console.log( 'error in GET request:', err );
@@ -32,6 +33,9 @@ class App extends Component {
                     <h3>SELECTED MONTH GOES HERE</h3>
                     <br />
                 </header>
+                <MonthList 
+                    months={this.state.monthList}
+                />
                 <br />
                 <p>List of months goes here</p>
             </div>
