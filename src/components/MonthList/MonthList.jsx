@@ -6,7 +6,13 @@ class MonthList extends Component {
         console.log('monthlist', this.props.months);
         
         let months = this.props.months.map( month => {
-            return <li key={month.id}>{month.name}</li>
+            return (
+                <li 
+                key={month.id}
+                onClick={this.props.handleClick}
+                >{month.name}</li>
+            )
+                
         })
 
         return (

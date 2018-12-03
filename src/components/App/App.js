@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MonthList from '../MonthList/MonthList';
+import Header from '../Header/Header';
 import './App.css';
 
 class App extends Component {
     state = {
+        currentMonth: '',
         monthList: []
     }
     
@@ -18,23 +20,25 @@ class App extends Component {
             console.log( 'error in GET request:', err );
         })
     }
+    handleClick = (e) => {
+        this.setState({
+            currentMonth: e.target.innerHTML
+        })
+    }
 
     componentDidMount() {
         this.getMonths();
     }
 
     render() {
-        console.log(this.state);
-        
         return (
             <div className="App">
-                <header className="App-header">
-                    <h1 className="App-title">Select a Month</h1>
-                    <h3>SELECTED MONTH GOES HERE</h3>
-                    <br />
-                </header>
+                <Header 
+                    currentMonth={this.state.currentMonth} 
+                />
                 <MonthList 
                     months={this.state.monthList}
+                    handleClick={this.handleClick}
                 />
                 <br />
                 <p>List of months goes here</p>
