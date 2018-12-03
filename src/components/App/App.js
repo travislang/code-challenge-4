@@ -40,8 +40,6 @@ class App extends Component {
                     months={this.state.monthList}
                     handleClick={this.handleClick}
                 />
-                <br />
-                <p>List of months goes here</p>
             </div>
         );
     }
